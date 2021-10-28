@@ -1,0 +1,27 @@
+function RunLength(str) { 
+var result = '';
+    if (str.length > 0) {
+        var count = 1;
+        var value = str[0];
+        for (var i = 1; i < str.length; ++i) {
+			var entry = str[ i ];
+            if (entry == value) {
+                count += 1;
+            } else {
+              	result += count + '' + value;
+              	count = 1;
+				value = entry;
+            }
+        }
+      	result += count + '' + entry;
+    }
+    return result;
+}
+
+   
+// keep this function call here 
+console.log(RunLength(readline()));
+
+// sample:
+//input: AAABBBCCCCCMM
+//output: 3A3B5C2M
