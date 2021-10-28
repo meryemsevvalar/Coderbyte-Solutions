@@ -1,0 +1,19 @@
+// checking a string if it's the same from forwards as it is backwards.
+
+function Palindrome(arr) { 
+
+let str = ""; 
+let strReverse = str.split("").reverse().join(""); 
+
+if (str === strReverse) {
+  console.log("true");
+} else {
+  console.log("false");
+}
+  // code goes here  
+  return str; 
+
+}
+   
+// keep this function call here 
+console.log(Palindrome(readline()));
