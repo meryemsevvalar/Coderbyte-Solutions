@@ -1,0 +1,7 @@
+function VowelCount(str) { 
+
+var m = str.match(/[aeiou]/gi);
+  return m === null ? 0 : m.length;
+}  
+// keep this function call here 
+console.log(VowelCount(readline()));
