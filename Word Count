@@ -1,0 +1,10 @@
+// find number of words in a string
+
+function WordCount(str) { 
+
+  for (var i=0; i<WordCount.length; i++);
+
+  return str.split(" ").length; 
+
+}
+console.log(WordCount(readline()));
