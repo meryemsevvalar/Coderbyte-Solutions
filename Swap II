@@ -1,0 +1,49 @@
+//Have the function SwapII(str) take the str parameter and swap the case of each character. 
+//Then, if a letter is between two numbers (without separation), switch the places of the two numbers. 
+//For example: if str is "6Hello4 -8World, 7 yes3" the output should be 4hELLO6 -8wORLD, 7 YES3.
+
+
+function SwapII(str) { 
+
+  var re = /[a-z]/;
+  var re2 = /[A-Z]/;
+  var re3 = /[0-9]/;
+  var re4 = /[a-z]/i;
+  var abc = [];
+  
+  for (var i=0; i<str.length; i++){
+  
+  if (str.charAt(i).match(re)){
+    abc.push(str[i].toUpperCase());
+  } 
+  
+  else if (str[i].match(re2)){
+    abc.push(str[i].toLowerCase());
+  } 
+  
+  else {
+     abc.push(str[i]);
+  }
+}
+
+for (var i=0; i< abc.length; i++){
+  if (abc[i].match(re3)) {
+    for (var j=i+1; j<abc.length; j++) {
+      if (abc[j] == " ") {
+        break;
+      }
+      else if(abc[j].match(re3)) {
+        var hold = abc[i];
+        abc[i] = abc[j];
+        abc[j]=hold;
+      }
+    }
+  }
+}
+  
+
+  return abc.join(""); 
+}  
+
+
+
