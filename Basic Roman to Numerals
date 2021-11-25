@@ -1,0 +1,45 @@
+************************************************************************************************************
+**Have the function BasicRomanNumerals(str) read str which will be a string of Roman numerals.            **
+**The numerals being used are: I for 1, V for 5, X for 10, L for 50, C for 100, D for 500 and M for 1000. **
+**In Roman numerals, to create a number like 11 you simply add a 1 after the 10, so you get XI.           **
+**But to create a number like 19, you use the subtraction notation                                        **
+**which is to add an I before an X or V (or add an X before an L or C). So 19 in Roman numerals is XIX.   **
+************************************************************************************************************
+
+//You can do all of that in the same function but not two, yet I made this way.
+
+function BasicRomanNumerals(str) { 
+
+  if(str == null) return -1;
+  var num = map(str.charAt(0))
+  var pre, curr;
+
+  for (var i=1; i<str.length; i++){
+    curr = map(str.charAt(i));
+    pre   =map(str.charAt(i-1));
+
+    if (curr<=pre){
+      num += curr;
+    } else {
+      num = num- pre*2 + curr;
+    }
+  }
+  
+  return num; 
+}
+
+function map(c) {
+  switch (c) {
+    case 'I': return 1;
+    case 'V': return 5;
+    case 'X': return 10;
+    case 'L' : return 50;
+    case 'C': return 100;
+    case 'D': return 500;
+    case 'M': return 1000
+    default: return -1;
+  }
+}
+   
+// keep this function call here 
+console.log(BasicRomanNumerals(readline()));
